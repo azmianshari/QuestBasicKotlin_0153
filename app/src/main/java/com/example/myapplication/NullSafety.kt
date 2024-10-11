@@ -1,5 +1,7 @@
 package com.example.myapplication
 
+import org.jetbrains.annotations.NotNull
+
 fun NullSafety(){
     var neverNull: String = "This can't be null"
 
@@ -17,4 +19,15 @@ fun NullSafety(){
     // Safe call operator
     println(neverNull.length) //18
     println(nullable?.length) //null
+
+    // notNull doesn't accept null values
+    fun strLenght(notNull: String): Int{
+        return notNull.length
+    }
+
+    println(strLenght(neverNull)) //18
+}
+
+fun main(){
+NullSafety()
 }
